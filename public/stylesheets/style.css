@@ -1,0 +1,16 @@
+body {
+  color: #4caec9;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #4caec9;
+}
+
+.loginWrap {
+    display: none;
+}
+
+.showLogin {
+    cursor: hand;
+}

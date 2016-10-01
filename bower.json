@@ -1,0 +1,17 @@
+{
+  "name": "chat",
+  "description": "",
+  "main": "",
+  "authors": [
+    "click <evgen.veprickiy@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/clickphp/chat",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
