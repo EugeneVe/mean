@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-var userSchema = new mongoose.Schema (
+var ObjectId = require('mongoose').Schema.ObjectId;
+var usersSchema = new mongoose.Schema (
     {
         login: {
             type: String,
@@ -10,10 +11,10 @@ var userSchema = new mongoose.Schema (
         birthday: {
             type: Date
         },
-        friends: String
+        friends: [{ type: ObjectId, ref: 'User' }]
     },
     {
         versionKey: false
     });
-var usersSchema = mongoose.model('users', userSchema);
-module.exports = usersSchema;
+var User = mongoose.model('User', usersSchema);
+module.exports = User;

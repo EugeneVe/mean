@@ -30,8 +30,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 mongoose.connect('mongodb://localhost/chatdb');
 
 app.use('/', routes);
-app.use('/user', users);
-app.use('/friends', friends);
+app.use('/', users);
+app.use('/users', users);
+
+
 
 // catch 404 and forward to error handler
     app.use(function(req, res, next) {
