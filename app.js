@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var connect = require('connect');
 var errorhandler = require('errorhandler');
 var routes = require('./routes/index');
-var friends = require ('./routes/friends');
 var users = require('./routes/users');
 var mongoose = require('mongoose');
 
@@ -66,4 +65,5 @@ app.use(function(err, req, res, next) {
             error: {}
         });
     });
+
 module.exports = app;

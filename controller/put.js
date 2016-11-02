@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/usersSchema');
 
+
 //update users
 exports.put = changeUser = function (req, res) {
     User.findById(req.params.userId, function (err, user) {

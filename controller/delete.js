@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/usersSchema');
 
+
 // delete users
 exports.drop = dropUser = function (req, res) {
     User.find(req.body).remove(function (err) {
