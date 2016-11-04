@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/usersSchema');
 
-
 //get users
 exports.get = showUsers = function (req, res) {
     User.find(function (err, users) {

@@ -3,7 +3,6 @@ var router = express.Router();
 var User = require('../models/usersSchema');
 var controllers = require('../controller/controllers');
 
-
 // users routes
 router
     .get('/', showUsers)
