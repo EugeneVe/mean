@@ -43,3 +43,35 @@ exports.get = addFriend = function (req, res) {
         });
     });
 };
+
+//post users
+exports.post = saveUser = function (req, res) {
+    User(req.body).save(function (err) {
+        if (err) return console.error(err);
+        console.log('Added new User ' + req.body.login);
+        res.send('Added new User ' + req.body.login);
+    });
+};
+
+//update users
+exports.put = changeUser = function (req, res) {
+    User.findById(req.params.userId, function (err, user) {
+        if (err) return next(err);
+        user.friends = req.body.friends;
+        user.name = req.body.name;
+        user.lastName = req.body.lastName;
+        user.save(function (err, user) {
+            if (err) return next(err);
+            res.send(user);
+        });
+    });
+};
+
+// delete users
+exports.drop = dropUser = function (req, res) {
+    User.find(req.body).remove(function (err) {
+        if (err) return console.error(err);
+        console.log('User ' + req.body.login + 'was removed');
+        res.send('User ' + req.body.login + ' was removed');
+    });
+};
