@@ -3,12 +3,12 @@
 <div class="loginWrap">
     <p class="lead">SIGN IN / SIGNUP</p>
     <div class="nameAdd">
-        <form>
+        <form action="/user/" method="post">
             <div class="form-group">
                 <label for="Name">Type Name:</label>
-                <input type="text" class="form-control" name="loginform">
+                <input type="text" class="form-control" name="loginform" placeholder="type Id here">
             </div>
-            <button type="submit" class="btn btn-default">Push it</button>
+            <button type="submit" class="btn btn-default" name="pushIt" onclick="this.form.reset();">Push it</button>
             <button type="button" class="btn btn-default" id="exitLogin">Exit</button>
         </form>
     </div>
@@ -23,5 +23,6 @@ $(document).ready(function(){
 
 $("#exitLogin").click(function(){
     $(".loginWrap").slideUp(200);
+    $('.loginWrap').find('form')[0].reset();
 });
 </script>

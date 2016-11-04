@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var connect = require('connect');
 var errorhandler = require('errorhandler');
 var routes = require('./routes/index');
-var friends = require ('./routes/friends');
 var users = require('./routes/users');
 var mongoose = require('mongoose');
 
@@ -30,8 +29,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 mongoose.connect('mongodb://localhost/chatdb');
 
 app.use('/', routes);
-app.use('/user', users);
-app.use('/friends', friends);
+app.use('/', users);
+app.use('/users', users);
+
+
 
 // catch 404 and forward to error handler
     app.use(function(req, res, next) {
@@ -64,4 +65,5 @@ app.use(function(err, req, res, next) {
             error: {}
         });
     });
+
 module.exports = app;
